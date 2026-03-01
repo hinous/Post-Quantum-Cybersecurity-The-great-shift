@@ -1,0 +1,28 @@
+# AES vs. RSA: The Duo That Runs the Internet
+
+To understand the future of Post-Quantum Cryptography, we must first understand the two giants that protect our digital world today: **AES** (Symmetric) and **RSA** (Asymmetric).
+
+## 1. AES: The High-Speed Shield (Symmetric)
+**Advanced Encryption Standard (AES)** is a symmetric-key algorithm. This means it uses the **same key** for both encryption and decryption.
+
+* **Speed:** Extremely fast. It is designed to handle massive amounts of data (hard drives, video streaming).
+* **Security:** Highly robust. A 256-bit AES key is considered "quantum-resistant" because even a quantum computer would only reduce its security by half, still leaving it unbreakable for eons.
+* **Weak Point:** Key distribution. Both parties must share the secret key beforehand through a secure channel.
+
+## 2. RSA: The Secure Handshake (Asymmetric)
+**Rivest-Shamir-Adleman (RSA)** is an asymmetric-key algorithm. It uses a **Public Key** to encrypt and a **Private Key** to decrypt.
+
+* **Function:** Its primary job is not to encrypt large files, but to securely exchange the "secret keys" that AES will use later.
+* **The Math:** Based on the difficulty of factoring large prime numbers.
+* **Vulnerability:** This is the "Achilles' heel" of modern security. A powerful quantum computer running **Shor’s Algorithm** could crack RSA in minutes.
+
+## Summary Table
+
+| Feature | AES (Symmetric) | RSA (Asymmetric) |
+| :--- | :--- | :--- |
+| **Key Count** | One shared key | Two (Public/Private) |
+| **Performance** | High-speed | Slow / Computationally heavy |
+| **Quantum Risk** | Low (just double the key size) | High (Critical vulnerability) |
+
+## Conclusion
+In modern web architecture (HTTPS), we use **RSA** to perform a "secure handshake" and agree on a secret key, then we switch to **AES** for the rest of the conversation. Understanding this partnership is the first step toward implementing Post-Quantum solutions.
